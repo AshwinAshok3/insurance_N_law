@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload | Nexustice AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .upload-container {
+            max-width: 800px;
+            margin: 4rem auto;
+        }
+        .upload-zone {
+            border: 2px dashed var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(0,0,0,0.1);
+            transition: var(--transition);
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+        .upload-zone:hover {
+            border-color: var(--accent-primary);
+            background: rgba(79, 70, 229, 0.05);
+        }
+        .upload-icon {
+            font-size: 3rem;
+            color: var(--accent-secondary);
+            margin-bottom: 1rem;
+        }
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+        .progress-bar {
+            height: 100%;
+            background: var(--accent-gradient);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar container">
+        <div class="nav-brand">
+            <i class="fa-solid fa-scale-balanced text-gradient"></i> Nexustice AI
+        </div>
+        <div class="nav-actions">
+            <a href="dashboard.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="container upload-container animate-fade-in">
+        <div class="glass-panel" style="padding: 3rem;">
+            <h2 style="margin-bottom: 0.5rem;">Document Ingestion Pipeline</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Upload PDF documents (Acts, Rules, Policies) to vectorize and insert them into the semantic database.</p>
+            
+            <div id="alert-box" class="alert hidden"></div>
+
+            <form id="upload-form">
+                <div class="input-group" style="margin-bottom: 1.5rem;">
+                    <label>Target Domain / Namespace</label>
+                    <select id="namespace-select" class="input-field" style="background-color: var(--bg-secondary); appearance: auto;">
+                        <option value="law">Law (BNS, BNSS, IPC, etc)</option>
+                        <option value="banks">Bank Policies (ICICI, HDFC, Axis, etc)</option>
+                        <option value="irdai">IRDAI Regulations</option>
+                    </select>
+                </div>
+                
+                <div class="upload-zone" id="drop-zone">
+                    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                    <h3>Click or drag PDF here to upload</h3>
+                    <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem;">Max file size: 10MB (PDF only)</p>
+                    <input type="file" id="file-input" accept=".pdf" style="display: none;">
+                </div>
+                
+                <div id="file-info" style="margin-bottom: 1rem; font-weight: 500; color: var(--accent-secondary);" class="hidden"></div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;" id="btn-upload" disabled>
+                    <i class="fa-solid fa-microchip"></i> Start Processing
+                </button>
+            </form>
+            
+            <div id="progress-container" class="hidden">
+                <div style="display: flex; justify-content: space-between; margin-top: 2rem; font-size: 0.875rem;">
+                    <span id="progress-status">Uploading & Extracting...</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        // Specific upload logic
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const fileInfo = document.getElementById('file-info');
+        const btnUpload = document.getElementById('btn-upload');
+        const uploadForm = document.getElementById('upload-form');
+        
+        dropZone.addEventListener('click', () => fileInput.click());
+        
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = 'var(--accent-primary)';
+        });
+        
+        dropZone.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = 'var(--border-glass)';
+        });
+        
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = 'var(--border-glass)';
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                handleFileSelect();
+            }
+        });
+        
+        fileInput.addEventListener('change', handleFileSelect);
+        
+        function handleFileSelect() {
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                fileInfo.textContent = `Selected: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+                fileInfo.classList.remove('hidden');
+                btnUpload.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

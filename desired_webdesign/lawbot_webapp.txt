@@ -1,0 +1,167 @@
+Webdesign 
+
+
+
+========================================================
+                LEGAL AI ASSISTANT (UI FLOW)
+========================================================
+
+
+---------------------- LANDING PAGE ----------------------
+
+ [LOGO]     Home | Ask AI | Case Search | Emergency | Profile | Settings | Logout
+
+
++----------------------+    +-----------------------------+
+|   LAW CATEGORIES     |    |     WELCOME SECTION         |
+|----------------------|    |-----------------------------|
+| - Criminal Law       |    | Welcome to Legal AI         |
+| - Evidence Law       |    | Assistant                  |
+| - Consumer Rights    |    |                            |
+|                      |    |   [ START ]                |
+|                      |    |   [ LOGIN ] [ REGISTER ]   |
+|                      |    |   [ CONTINUE AS GUEST ]    |
++----------------------+    +-----------------------------+
+
+
+FLOW:
+START / GUEST  ----------->  ASK AI PAGE
+LOGIN / REGISTER --------->  LOGIN PAGE
+
+
+---------------------- LOGIN / REGISTER PAGE ----------------------
+
++--------------------------------------------------+
+| Username: [______________]                        |
+| Password: [______________]                        |
+|                                                  |
+|   [ LOGIN ]   [ REGISTER ]   [ GUEST MODE ]       |
++--------------------------------------------------+
+
+FLOW:
+LOGIN ---------> HOME PAGE
+REGISTER ------> REGISTER FORM ------> HOME PAGE
+GUEST ---------> ASK AI PAGE
+
+
+---------------------- HOME PAGE ----------------------
+
++--------------------------------------------------+
+| Welcome User!                                    |
+| Daily Legal Tip                                  |
+| Important Legal Info                             |
++--------------------------------------------------+
+
++----------------------+    +-----------------------------+
+|   LAW MENU (LEFT)    |    |    CONTENT DISPLAY (RIGHT)  |
+|----------------------|    |-----------------------------|
+| - BNS                |    | Sections Details            |
+| - BNSS               |    | Explanation                 |
+| - BSA                |    | Examples                    |
++----------------------+    +-----------------------------+
+
+MAIN BUTTONS:
+[ ASK LEGAL QUESTION ]   [ SEARCH CASE ]   [ EMERGENCY HELP ]
+
+FLOW:
+ASK LEGAL QUESTION -----> ASK AI PAGE
+SEARCH CASE ------------> CASE SEARCH PAGE
+EMERGENCY HELP ---------> EMERGENCY PAGE
+
+
+---------------------- ASK AI PAGE ----------------------
+
++--------------------------------------------------+
+| Enter your legal question:                       |
+| [__________________________________________]     |
+|                                                  |
+|        [ SUBMIT ]     [ CLEAR ]                  |
++--------------------------------------------------+
+
+FLOW:
+SUBMIT ---------> AI RESPONSE SECTION
+
+
+---------------------- AI RESPONSE ----------------------
+
++--------------------------------------------------+
+| Section / Law:                                   |
+| Crime / Punishment:                              |
+| Procedure (BNSS):                                |
+| Evidence (BSA):                                  |
+| Suggested Action:                                |
+| Risk Level:                                      |
++--------------------------------------------------+
+
+ADVANCED FEATURES:
+
++---------------------------+
+| [ LEGAL MIND MAP ]        |
+| Crime → Procedure → Evidence |
++---------------------------+
+
++---------------------------+
+| [ OUTCOME SIMULATION ]    |
+| Best | Worst | Likely     |
++---------------------------+
+
++---------------------------+
+| [ LAW TIMELINE ]          |
+| Past → Present changes    |
++---------------------------+
+
+
+---------------------- CASE SEARCH PAGE ----------------------
+
++--------------------------------------------------+
+| Search by Section: [_____]                        |
+| OR Keyword: [___________]                         |
+|                                                  |
+|           [ SEARCH ]                              |
++--------------------------------------------------+
+
+RESULT:
+- BNS Sections
+- BNSS Procedures
+- BSA Evidence
+- Related Cases
+
+
+---------------------- EMERGENCY HELP PAGE ----------------------
+
++--------------------------------------------------+
+| Nearby Police Station Info                        |
+| Legal Helpline Numbers                           |
+| Immediate Action Steps                           |
++--------------------------------------------------+
+
+
+---------------------- PROFILE PAGE ----------------------
+
++--------------------------------------------------+
+| Name: ____________                               |
+| Email: ____________                              |
+|                                                  |
+| [ EDIT PROFILE ]                                 |
+| [ SAVED QUERIES ]                                |
+| [ DELETE QUERIES ]                               |
++--------------------------------------------------+
+
+
+---------------------- SETTINGS PAGE ----------------------
+
++--------------------------------------------------+
+| Dark Mode / Light Mode                           |
+| Notifications ON / OFF                           |
+| Language Selection                               |
++--------------------------------------------------+
+
+
+---------------------- LOGOUT ----------------------
+
+[ LOGOUT ]  --------->  RETURN TO LANDING PAGE
+
+
+========================================================
+                    END OF UI FLOW
+========================================================

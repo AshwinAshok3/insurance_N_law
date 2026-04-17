@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexustice AI | Legal & Insurance Intelligence</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+        .feature-card {
+            padding: 2rem;
+            text-align: left;
+            transition: var(--transition);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-secondary);
+            margin-bottom: 1.5rem;
+        }
+        .feature-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .feature-desc {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container animate-fade-in">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fa-solid fa-scale-balanced text-gradient"></i> Nexustice AI
+            </div>
+            <div class="nav-links">
+                <a href="#" class="btn-ghost" style="padding: 0.5rem 1rem;">Features</a>
+                <a href="#" class="btn-ghost" style="padding: 0.5rem 1rem;">Domains</a>
+                <a href="#" class="btn-ghost" style="padding: 0.5rem 1rem;">Emergency</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="login.html?mode=register" class="btn btn-primary">Get Started</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <h1>Unified <span class="text-gradient">Legal & Insurance</span> Intelligence</h1>
+            <p>Empowering professionals and individuals with AI-driven compliance checks, legal referencing, and policy insights.</p>
+            <div class="hero-actions">
+                <a href="dashboard.html?guest=true" class="btn btn-primary">Try as Guest <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="login.html?mode=register" class="btn btn-outline">Create Admin Account</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="glass-panel feature-card">
+                <i class="fa-solid fa-gavel feature-icon"></i>
+                <h3 class="feature-title">Legal AI Assistant</h3>
+                <p class="feature-desc">Query BNS, BNSS, and BSA laws securely. Get detailed section insights, penalties, and procedural recommendations.</p>
+            </div>
+            <div class="glass-panel feature-card">
+                <i class="fa-solid fa-shield-halved feature-icon"></i>
+                <h3 class="feature-title">ComplianceHub Engine</h3>
+                <p class="feature-desc">Validate bank insurance rules and explore IRDAI guidelines in real-time. Uncover risk metrics and violations instantly.</p>
+            </div>
+            <div class="glass-panel feature-card">
+                <i class="fa-solid fa-file-pdf feature-icon"></i>
+                <h3 class="feature-title">Smart Policy Ingestion</h3>
+                <p class="feature-desc">Upload documents and let the AI extract, embed, and map the regulatory text against our advanced vector database.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
